@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-	std::cout << "Constructer called" << std::endl;
+	std::cout << "ClapTrap Constructer called" << std::endl;
 	this->name = "Trappy";
 	this->healthp = 10;
 	this->energyp = 10;
@@ -9,7 +9,7 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(std::string name) {
-	std::cout << "Constructer called" << std::endl;
+	std::cout << "ClapTrap Constructer called" << std::endl;
 	this->name = name;
 	this->healthp = 10;
 	this->energyp = 10;
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Copy Constructer called" << std::endl;
+	std::cout << "Claptrap Copy Constructer called" << std::endl;
 	this->name = other.name;
 	this->healthp = other.healthp;
 	this->energyp = other.energyp;
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap other) {
-	std::cout << "Assignment Operator called" << std::endl;
+	std::cout << "ClapTrap Assignment Operator called" << std::endl;
 	this->name = other.name;
 	this->healthp = other.healthp;
 	this->energyp = other.energyp;
@@ -34,7 +34,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap other) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 };
 
 std::string ClapTrap::get_name(void) {
@@ -54,7 +54,7 @@ void ClapTrap::attack(const std::string &target) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->energyp > 0 && this->healthp > 0) {
-		std::cout << "ClapTrap " << this->name << " has gained " << amount << " hp!" << std::endl;
+		std::cout << this->name << " has gained " << amount << " hp!" << std::endl;
 		this->energyp--;
 		this->healthp += amount;
 	}
@@ -66,7 +66,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->healthp > 0) {
-		std::cout << "ClapTrap " << this->name << " has taken " << amount << " damage:(" << std::endl;
+		std::cout << this->name << " has taken " << amount << " damage:(" << std::endl;
 		this->healthp -= amount;
 	}
 	else if (this->healthp <= 0)
